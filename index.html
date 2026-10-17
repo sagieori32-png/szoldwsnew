@@ -427,6 +427,19 @@ footer .adm:hover{color:#fff}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 
+.form-card{background:#fff;color:var(--ink);border-radius:28px;padding:2rem;margin-top:3rem;box-shadow:0 20px 50px rgba(0,0,0,.35);position:relative}
+.form-card h3{font-size:1.6rem;color:var(--green-dark);margin-bottom:.3rem}
+.form-card .fnote{color:#555;font-size:.92rem;margin-bottom:1.2rem}
+.f-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.f-grid label{display:block;font-weight:700;font-size:.92rem}
+.f-grid label.wide{grid-column:1/-1}
+.f-grid input,.f-grid select,.f-grid textarea{display:block;width:100%;margin-top:.3rem;padding:.7rem .9rem;border:2px solid #ddd;border-radius:14px;font-family:'Heebo';font-size:1rem;background:#fafafa}
+.f-grid input:focus,.f-grid select:focus,.f-grid textarea:focus{outline:none;border-color:var(--green);background:#fff}
+.f-grid .bad{border-color:#d3495a}
+.f-msg{min-height:1.4em;font-weight:700;margin-bottom:.8rem}
+.f-msg.ok{color:var(--green-dark)}.f-msg.err{color:#c22}
+@media(max-width:620px){.f-grid{grid-template-columns:1fr}.form-card{padding:1.4rem}}
+
 </style>
 </head>
 <body>
@@ -779,6 +792,28 @@ footer .adm:hover{color:#fff}
       <p>סרקו כאן כדי לקרוא את חוברת פתיחת השנה</p>
       <a class="btn" href="https://bit.ly/Szoldschooljlm" target="_blank" rel="noopener">לפתיחת החוברת</a>
     </div>
+  </div>
+  <div class="wrap">
+    <form class="form-card" id="contactForm" onsubmit="sendContact(event)" novalidate>
+      <h3>השאירו פרטים ונחזור אליכם</h3>
+      <p class="fnote">אנחנו משתמשים בפרטים רק כדי לחזור אליכם בנוגע לפנייה.</p>
+      <div class="f-grid">
+        <label>שם מלא<input type="text" name="name" id="cfName" autocomplete="name" required></label>
+        <label>טלפון<input type="tel" name="phone" id="cfPhone" autocomplete="tel" dir="ltr" style="text-align:right" required></label>
+        <label>אימייל (לא חובה)<input type="email" name="email" id="cfEmail" autocomplete="email" dir="ltr" style="text-align:right"></label>
+        <label>הפנייה היא בנושא
+          <select name="topic" id="cfTopic">
+            <option>היכרות והרשמה לכיתה א׳</option>
+            <option>הצטרפות לקהילת ההורים</option>
+            <option>שאלה כללית</option>
+            <option>אחר</option>
+          </select></label>
+        <label class="wide">הודעה (לא חובה)<textarea name="message" id="cfMsg" rows="3"></textarea></label>
+      </div>
+      <input type="text" id="cfHoney" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
+      <div class="f-msg" id="cfStatus" role="status" aria-live="polite"></div>
+      <button class="btn big orange" type="submit" id="cfBtn">שליחה</button>
+    </form>
   </div>
 </section>
 
@@ -1337,6 +1372,42 @@ if(GCAL_ID){
   const note=document.createElement('div');
   note.innerHTML='<p>הלוח באתר מוצג מיומן Google המשותף של בית הספר. כדי להוסיף, לערוך או למחוק אירועים – פשוט עדכנו את היומן, והאתר יתעדכן אוטומטית לכל הגולשים.</p><a class="btn" style="text-decoration:none;display:inline-block" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/r?cid='+encodeURIComponent(GCAL_ID)+'">פתיחת היומן ב-Google Calendar ↗</a>';
   ap.appendChild(note);
+}
+
+/* ================= טופס יצירת קשר ================= */
+const CONTACT_EMAIL='helly.szoldschooljer@gmail.com';
+async function sendContact(e){
+  e.preventDefault();
+  const st=document.getElementById('cfStatus'),btn=document.getElementById('cfBtn');
+  const name=document.getElementById('cfName'),phone=document.getElementById('cfPhone');
+  [name,phone].forEach(x=>x.classList.remove('bad'));
+  st.className='f-msg';
+  if(document.getElementById('cfHoney').value)return;
+  const digits=phone.value.replace(/\D/g,'');
+  if(!name.value.trim()||digits.length<9){
+    if(!name.value.trim())name.classList.add('bad');
+    if(digits.length<9)phone.classList.add('bad');
+    st.className='f-msg err';st.textContent='נא למלא שם מלא וטלפון תקין (לפחות 9 ספרות).';return;
+  }
+  const data={
+    'שם':name.value.trim(),'טלפון':phone.value.trim(),
+    'אימייל':document.getElementById('cfEmail').value.trim(),
+    'נושא':document.getElementById('cfTopic').value,
+    'הודעה':document.getElementById('cfMsg').value.trim(),
+    _subject:'פנייה חדשה מאתר בית ספר סאלד',_template:'table',_captcha:'false'
+  };
+  btn.disabled=true;btn.textContent='שולח...';
+  try{
+    const r=await fetch('https://formsubmit.co/ajax/'+CONTACT_EMAIL,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)});
+    const j=await r.json().catch(()=>({}));
+    if(!r.ok||j.success==='false'||j.success===false)throw new Error('send failed');
+    st.className='f-msg ok';st.textContent='תודה! הפנייה נשלחה, נחזור אליכם בהקדם.';
+    document.getElementById('contactForm').reset();
+  }catch(err){
+    const body=encodeURIComponent('שם: '+data['שם']+'\nטלפון: '+data['טלפון']+'\nאימייל: '+data['אימייל']+'\nנושא: '+data['נושא']+'\n\n'+data['הודעה']);
+    st.className='f-msg err';
+    st.innerHTML='לא הצלחנו לשלוח מהאתר. אפשר <a href="mailto:'+CONTACT_EMAIL+'?subject='+encodeURIComponent('פנייה מאתר בית ספר סאלד')+'&body='+body+'">לשלוח אלינו במייל</a> או להתקשר: <a href="tel:025633675" dir="ltr">02-5633675</a>.';
+  }finally{btn.disabled=false;btn.textContent='שליחה'}
 }
 
 /* ================= ספר טלפונים ================= */
