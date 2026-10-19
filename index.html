@@ -20,7 +20,7 @@
 }
 .cal-nav button:hover{background:var(--green);color:#fff}
 .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
-.cal-dow{text-align:center;font-weight:700;font-size:.8rem;color:#888;padding:.3rem 0}
+.cal-dow{text-align:center;font-weight:700;font-size:.8rem;color:#666;padding:.3rem 0}
 .cal-cell{
   min-height:72px;background:#f6f6f6;border-radius:10px;padding:.3rem .35rem;
   font-size:.8rem;position:relative;cursor:pointer;transition:background .15s;
@@ -34,7 +34,7 @@
   font-size:.68rem;margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
 }
 .cal-event.g{background:var(--green)}
-.cal-legend{font-size:.82rem;color:#777;margin-top:.7rem}
+.cal-legend{font-size:.82rem;color:#666;margin-top:.7rem}
 /* ---- upcoming events banner ---- */
 .upcoming-banner{
   background:linear-gradient(120deg,var(--green),var(--green-dark));
@@ -57,7 +57,7 @@
 }
 .upcoming-item .date-badge small{display:block;font-weight:500;font-size:.68rem;opacity:.9}
 .upcoming-item .ev-title{font-weight:700;color:var(--ink)}
-.upcoming-item .ev-time{color:#777;font-size:.8rem}
+.upcoming-item .ev-time{color:#666;font-size:.8rem}
 .upcoming-empty{
   background:rgba(255,255,255,.18);border:1.5px dashed rgba(255,255,255,.6);
   color:#fff;border-radius:14px;padding:.55rem 1.1rem;font-weight:500;font-size:.95rem;
@@ -129,7 +129,7 @@
 .msg{max-width:85%;padding:.55rem .9rem;border-radius:16px;font-size:.9rem;line-height:1.55;white-space:pre-wrap}
 .msg.bot{background:#fff;border:1.5px solid var(--mint);align-self:flex-start;border-bottom-right-radius:4px}
 .msg.user{background:var(--magenta);color:#fff;align-self:flex-end;border-bottom-left-radius:4px}
-.msg.typing{color:#888;font-style:italic}
+.msg.typing{color:#666;font-style:italic}
 .chat-input{display:flex;gap:.5rem;padding:.7rem;border-top:1px solid #eee;background:#fff}
 .chat-input input{flex:1;border:2px solid #e4e4e4;border-radius:999px;padding:.55rem 1rem;font-family:'Heebo';font-size:.9rem}
 .chat-input input:focus{outline:none;border-color:var(--green)}
@@ -149,17 +149,17 @@ footer .stars{font-size:1.4rem;letter-spacing:.5rem;margin-bottom:.6rem}
 }
 
 :root{
-  --green:#0f9077;--green-dark:#0b6e5b;--mint:#9fd9c9;--magenta:#a444ad;--magenta-light:#c77fd0;
+  --green:#0b7a66;--green-dark:#0b6e5b;--mint:#9fd9c9;--magenta:#9a3ca4;--magenta-light:#c77fd0;
   --orange:#f2a93b;--purple-soft:#cfa8e6;--paper:#ececec;--paper-dark:#e2e2e2;--ink:#1c1c1c;--white:#fff;
   --radius:18px;--shadow:0 6px 24px rgba(0,0,0,.08);--wrap:1160px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:76px}
-body{font-family:'Heebo',sans-serif;color:var(--ink);background:var(--paper);line-height:1.7;overflow-x:hidden;font-size:17px}
+body{font-family:'Heebo',sans-serif;color:var(--ink);background:var(--paper);line-height:1.7;overflow-x:hidden;font-size:1.0625rem}
 h1,h2,h3,h4{font-family:'Rubik',sans-serif;line-height:1.2}
 img{max-width:100%}
 a{color:var(--green-dark)}
-:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 1.3rem}
 section{padding:5rem 0;position:relative}
 .band{display:inline-block;background:var(--green);color:#fff;padding:.05em .4em .12em;transform:rotate(-1.6deg);-webkit-box-decoration-break:clone;box-decoration-break:clone}
@@ -227,7 +227,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.94);backdrop-
 /* NEXT UP strip */
 .nextup{background:var(--green);color:#fff;padding:1.1rem 0}
 .nextup .wrap{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap}
-.nextup h3{font-size:1.1rem;font-weight:900;white-space:nowrap}
+
 .nextup .upcoming-list{flex:1}
 .nextup .upcoming-item{box-shadow:none;padding:.4rem .8rem}
 .nextup .more{color:#fff;font-weight:700;white-space:nowrap}
@@ -260,7 +260,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.94);backdrop-
 .place-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
 .place p{margin-bottom:1rem}
 .chips{display:flex;flex-wrap:wrap;gap:.6rem}
-.chip{background:var(--mint);color:var(--green-dark);padding:.4rem 1rem;border-radius:999px;font-weight:700;font-size:.95rem}
+.chip{background:var(--mint);color:#064c3e;padding:.4rem 1rem;border-radius:999px;font-weight:700;font-size:.95rem}
 .chip.o{background:#fbe2b5;color:#7a4a00}.chip.m{background:#ecd3f0;color:#6e2a76}.chip.g{background:var(--green);color:#fff}
 .place-list{display:grid;gap:.8rem;margin-top:1rem}
 .place-card{background:var(--paper);border-radius:18px;padding:1rem 1.2rem;border-inline-start:8px solid var(--orange)}
@@ -414,7 +414,7 @@ footer .adm:hover{color:#fff}
  .why:nth-child(n){grid-column:span 12}
 }
 @media(max-width:620px){
- body{font-size:16px}
+ body{font-size:1rem}
  .committees{grid-template-columns:repeat(3,1fr);gap:.6rem}
  .committee{font-size:.8rem;padding:.7rem .3rem}
  .committee .tile{width:60px;height:60px}.committee .tile img{width:40px;height:40px}
@@ -489,17 +489,123 @@ body.cms-edit .nextup,body.cms-edit .hero-cta{pointer-events:auto}
 .sw input{width:auto!important}
 @media(max-width:620px){#cmsBar button{padding:.4rem .7rem;font-size:.82rem}body.cms-edit{padding-bottom:210px}}
 body.cms-edit .toast{bottom:10rem}
+/* ===== נגישות ===== */
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip-link{position:absolute;top:-80px;inset-inline-start:1rem;z-index:1000;background:#000;color:#fff;padding:.8rem 1.3rem;border-radius:0 0 14px 14px;font-weight:700;text-decoration:none}
+.skip-link:focus{top:0}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px;box-shadow:0 0 0 5px #1c1c1c;border-radius:6px}
+main:focus{outline:none;box-shadow:none}
+a.brand{text-decoration:none}
+.nextup-t{font-family:'Rubik';font-size:1.1rem;font-weight:900;white-space:nowrap}
+.btn,.nav-links a,.hamburger,.person a,footer .adm{min-height:44px}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-align:center}
+.nav-links a{display:flex;align-items:center}
+.hamburger{min-width:44px}
+.foot-links a{color:var(--mint);font-weight:700}
+.upcoming-empty{background:rgba(0,0,0,.22)!important}
+.sched div{background:rgba(0,0,0,.2)!important}
+.chat-input button{color:var(--ink)!important}
+.btn.danger,.btn.danger:hover{background:#b8374a}
+/* הצהרת נגישות */
+.a11y-sec{background:#fff;padding:4rem 0}
+.a11y-text{max-width:760px}
+.a11y-text h3{font-size:1.25rem;color:var(--green-dark);margin:1.4rem 0 .4rem}
+.a11y-text p{margin-bottom:.8rem}
+.a11y-text ul{padding-inline-start:1.4rem;margin-bottom:.8rem}
+.a11y-text li{margin-bottom:.3rem}
+.a11y-contact{list-style:none;padding-inline-start:0!important}
+.a11y-date{color:#555;font-size:.92rem}
+/* תפריט נגישות */
+#a11yBtn{position:fixed;inset-inline-start:1rem;bottom:calc(1.4rem + env(safe-area-inset-bottom,0px));z-index:650;width:56px;height:56px;border-radius:50%;border:3px solid #fff;background:#1c1c1c;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.35)}
+#a11yBtn:hover{background:var(--magenta)}
+#a11yPanel{position:fixed;inset-inline-start:1rem;bottom:calc(5.2rem + env(safe-area-inset-bottom,0px));z-index:660;width:min(340px,calc(100vw - 2rem));max-height:calc(100dvh - 7rem);overflow:auto;background:#fff;color:#1c1c1c;border-radius:20px;box-shadow:0 18px 60px rgba(0,0,0,.35);padding:1rem}
+#a11yPanel[hidden]{display:none}
+.a11y-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.7rem;font-family:'Rubik';font-size:1.1rem}
+#a11yPanel button{font-family:'Heebo';font-size:.95rem;cursor:pointer;border-radius:12px;border:2px solid #1c1c1c;background:#fff;color:#1c1c1c;min-height:44px;padding:.4rem .7rem;font-weight:700}
+#a11yPanel button:hover{background:#eee}
+#a11yPanel button[aria-pressed="true"]{background:#1c1c1c;color:#fff}
+.a11y-x{min-width:44px}
+.a11y-size{display:flex;align-items:center;gap:.5rem;margin-bottom:.7rem}
+.a11y-size span:first-child{flex:1;font-weight:700}
+.a11y-size output{min-width:3.2rem;text-align:center;font-weight:700}
+.a11y-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:.7rem}
+.a11y-foot{display:flex;justify-content:space-between;align-items:center;gap:.5rem}
+.a11y-foot a{font-weight:700;color:#0b6e5b}
+body.cms-edit #a11yBtn{bottom:calc(11rem)}
+/* מצבי נגישות */
+html.a11y-gray{filter:grayscale(1)}
+html.a11y-font body,html.a11y-font *{font-family:Arial,'Helvetica Neue',Helvetica,sans-serif!important}
+html.a11y-spacing body{line-height:2!important;letter-spacing:.05em;word-spacing:.16em}
+html.a11y-links a{text-decoration:underline!important;text-underline-offset:3px;outline:2px solid #ffbf47;outline-offset:2px}
+html.a11y-heads h1,html.a11y-heads h2,html.a11y-heads h3,html.a11y-heads h4{outline:3px solid #0b6e5b;outline-offset:4px;background:#fff7cc!important;color:#000!important}
+html.a11y-cursor,html.a11y-cursor *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24'%3E%3Cpath d='M4 2l15 10-6.5 1.5L16 21l-3 1-3.5-7.5L4 18z' fill='black' stroke='white' stroke-width='1.6' stroke-linejoin='round'/%3E%3C/svg%3E") 4 2,auto!important}
+html.a11y-noanim *,html.a11y-noanim *::before,html.a11y-noanim *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+html.a11y-noanim .gal-item img,html.a11y-noanim .committee,html.a11y-noanim .gv,html.a11y-noanim .stat,html.a11y-noanim .band,html.a11y-noanim .qr-card,html.a11y-noanim .logo-card{transform:none!important}
+html.a11y-contrast body{background:#000!important;color:#fff!important}
+html.a11y-contrast *:not(svg):not(path):not(rect):not(img):not(.stk):not(iframe){background-color:#000!important;background-image:none!important;color:#fff!important;border-color:#fff!important;box-shadow:none!important;text-shadow:none!important}
+html.a11y-contrast .stk,html.a11y-contrast .stk *{background-color:transparent!important}
+html.a11y-contrast a,html.a11y-contrast a *{color:#ffeb3b!important;text-decoration:underline!important}
+html.a11y-contrast .btn,html.a11y-contrast button,html.a11y-contrast input,html.a11y-contrast select,html.a11y-contrast textarea,html.a11y-contrast .chip,html.a11y-contrast .why,html.a11y-contrast .prog,html.a11y-contrast .note-card,html.a11y-contrast .person,html.a11y-contrast .stat,html.a11y-contrast .committee,html.a11y-contrast .gv,html.a11y-contrast details{border:2px solid #fff!important}
+html.a11y-contrast .btn,html.a11y-contrast button{color:#ffeb3b!important}
+html.a11y-contrast .tile{background-color:#fff!important}
+html.a11y-contrast .tile img{filter:none}
+html.a11y-contrast .gv img,html.a11y-contrast .committee img{background:#fff!important;border-radius:50%}
+html.a11y-contrast .qr-card,html.a11y-contrast .qr-card *{background-color:#fff!important;color:#000!important}
+html.a11y-contrast .qr-card .btn{background-color:#000!important;color:#ffeb3b!important}
+html.a11y-contrast #a11yPanel,html.a11y-contrast #a11yPanel *{background-color:#000!important;color:#fff!important;border-color:#fff!important}
+html.a11y-contrast #a11yPanel [aria-pressed="true"]{background-color:#ffeb3b!important;color:#000!important}
+/* ===== שיפורי מובייל ===== */
+@media(max-width:1020px){
+  .nav-links{max-height:calc(100dvh - 70px);overflow:auto}
+  .hamburger{font-size:1.9rem;width:48px;height:48px;display:flex;align-items:center;justify-content:center}
+}
+@media(max-width:620px){
+  html{scroll-padding-top:68px}
+  .wrap{padding:0 1.1rem}
+  section{padding:3rem 0}
+  .hero{padding:1.6rem 0 3rem}
+  .hero .welcome{font-size:1.05rem}
+  .hero p.sub{font-size:1.1rem}
+  .hero-art{min-height:320px}
+  .hero-cta{flex-direction:column}
+  .hero-cta .btn{width:100%}
+  .btn.big{padding:.85rem 1.4rem}
+  .nextup .wrap{gap:.6rem}
+  .nextup .upcoming-list{flex:1 1 100%}
+  .stat{min-height:130px;padding:1.1rem}
+  .why{padding:1.3rem}
+  .committee{font-size:.88rem}
+  .committee .lbl{display:block;line-height:1.25}
+  .gv{padding:1rem .4rem}
+  .two-col,.extras{gap:1rem}
+  .note-card,.letter,.news,.qr-card,.form-card,.parents .quote{padding:1.3rem}
+  .staff-box{padding:1.1rem}
+  .acc summary{font-size:1.02rem}
+  .join-grid{gap:2rem}
+  .qr-card{transform:none}
+  .contact-list li{font-size:1rem;align-items:flex-start}
+  .contact-list a{overflow-wrap:anywhere}
+  #gcalFrame{height:480px!important}
+  .fb-card .btn{width:100%}
+  #chatFab{inset-inline-start:auto;inset-inline-end:1rem;bottom:calc(1.4rem + env(safe-area-inset-bottom,0px));width:56px;height:56px}
+  #chatBox{inset-inline-start:.6rem;inset-inline-end:.6rem;width:auto;bottom:calc(.6rem + env(safe-area-inset-bottom,0px));height:min(560px,calc(100dvh - 1.2rem))}
+  #a11yBtn{width:52px;height:52px}
+  .chat-input input,.dir-search,.f-grid input,.f-grid select,.f-grid textarea{font-size:1rem}
+  .person{padding:.9rem 1rem}
+  .brand{font-size:.9rem;max-width:14rem}
+}
 
 </style>
 </head>
 <body>
-<nav>
+<a class="skip-link" href="#main">דלגו לתוכן הראשי</a>
+<nav aria-label="תפריט ראשי">
   <div class="nav-inner">
-    <div class="brand" onclick="scrollTo({top:0,behavior:'smooth'})">
+    <a class="brand" href="./" onclick="event.preventDefault();scrollTo({top:0,behavior:'smooth'})">
       <img src="data:image/png;base64,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" width="28" height="40" alt="">
       <span>ביה״ס הממלכתי ע״ש הנרייטה סאלד בירושלים</span>
-    </div>
-    <button class="hamburger" aria-label="תפריט" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+    </a>
+    <button class="hamburger" id="navToggle" aria-label="פתיחת תפריט" aria-expanded="false" aria-controls="navLinks" onclick="toggleNav()"><span aria-hidden="true">☰</span></button>
     <div class="nav-links" id="navLinks">
       <a href="#why" onclick="closeNav()">למה סאלד</a>
       <a href="#place" onclick="closeNav()">איך לומדים</a>
@@ -537,17 +643,18 @@ body.cms-edit .toast{bottom:10rem}
   </div>
 </header>
 
-<div class="nextup" id="nextup">
+<section class="nextup" id="nextup" aria-label="אירועים קרובים">
   <div class="wrap">
-    <h3>🔔 בקרוב בסאלד</h3>
+    <div class="nextup-t"><span aria-hidden="true">🔔</span> בקרוב בסאלד</div>
     <div class="upcoming-list" id="heroUpcoming"><span class="upcoming-empty">טוען אירועים...</span></div>
     <a class="more" href="#calendar">ללוח השנה המלא ‹</a>
   </div>
-</div>
+</section>
 
-<main>
+<main id="main" tabindex="-1">
 
-<section class="stats" aria-label="סאלד במספרים">
+<section class="stats">
+  <h2 class="sr-only">סאלד במספרים</h2>
   <div class="wrap stats-grid">
     <div class="stat"><b>14</b><span>ועדות תלמידים שמנהלות את בית הספר</span></div>
     <div class="stat"><b>10</b><span>צוותי הורים פעילים</span></div>
@@ -750,9 +857,9 @@ body.cms-edit .toast{bottom:10rem}
     <div id="contacts">
       <div class="dir-head">
         <h3>אנשי צוות ותפקידים</h3>
-        <input class="dir-search" id="dirSearch" type="search" placeholder="חיפוש לפי שם, תפקיד או כיתה…" aria-label="חיפוש איש קשר" oninput="renderDir()">
+        <input class="dir-search" id="dirSearch" type="search" placeholder="חיפוש לפי שם, תפקיד או כיתה…" aria-label="חיפוש איש צוות לפי שם, תפקיד או כיתה" aria-controls="dirGrid" oninput="renderDir()">
       </div>
-      <div class="dir-grid" id="dirGrid"></div>
+      <div class="dir-grid" id="dirGrid" aria-live="polite"></div>
       <p class="dir-note">ליצירת קשר עם אנשי הצוות פנו למזכירות בית הספר: <a data-set="phone" data-settext href="tel:025633675" dir="ltr">02-5633675</a> או <a data-set="email" data-settext href="mailto:helly.szoldschooljer@gmail.com">helly.szoldschooljer@gmail.com</a>.</p>
     </div>
   </div>
@@ -772,7 +879,7 @@ body.cms-edit .toast{bottom:10rem}
       </div>
       <h3 style="margin-top:1.8rem">ועד הורים מרכזי</h3>
       <p>הוועד המרכזי מתכנס מדי חודש, דן בנושאים שעל סדר היום, מתווה מדיניות ופועל בשיתוף פעולה מלא עם ההנהלה והצוות החינוכי. מוזמנים להצטרף.</p>
-      <div class="fb-card"><span style="font-size:1.8rem">👥</span><div style="flex:1;min-width:200px"><b>קבוצת הפייסבוק של הורי סאלד</b><br><span style="font-size:.92rem;color:#555">עדכונים, הרשמה לצוותים ושיחה פתוחה</span></div><a data-set="fbParents" class="btn" href="https://www.facebook.com/groups/242171519177997" target="_blank" rel="noopener">להצטרפות</a></div>
+      <div class="fb-card"><span style="font-size:1.8rem" aria-hidden="true">👥</span><div style="flex:1;min-width:200px"><b>קבוצת הפייסבוק של הורי סאלד</b><br><span style="font-size:.92rem;color:#555">עדכונים, הרשמה לצוותים ושיחה פתוחה</span></div><a data-set="fbParents" class="btn" href="https://www.facebook.com/groups/242171519177997" target="_blank" rel="noopener">להצטרפות</a></div>
     </div>
     <div class="quote">
       <h3 style="color:var(--green-dark)">דבר יו״ר הנהגת ההורים</h3>
@@ -789,13 +896,13 @@ body.cms-edit .toast{bottom:10rem}
     <p class="kicker">אירועי בית הספר וקהילת סאלד ביומן אחד, כדי להיערך מראש ולקחת חלק.</p>
     <div id="gcalWrap" style="display:none">
       <div id="upcomingWrap" class="upcoming-banner">
-        <div class="upcoming-head">🔔 אירועים קרובים</div>
+        <div class="upcoming-head"><span aria-hidden="true">🔔</span> אירועים קרובים</div>
         <div id="upcomingList" class="upcoming-list"><span class="upcoming-empty">טוען אירועים...</span></div>
       </div>
       <div class="cal-wrap" style="padding:.6rem">
         <iframe id="gcalFrame" style="border:0;width:100%;height:560px;border-radius:12px" frameborder="0" scrolling="no" title="לוח אירועים בית ספר סאלד"></iframe>
       </div>
-      <p class="cal-legend">הלוח משותף ומתעדכן לכל קהילת בית הספר.</p>
+      <p class="cal-legend">הלוח משותף ומתעדכן לכל קהילת בית הספר. <a id="gcalOpen" href="#" target="_blank" rel="noopener">פתיחת היומן בחלון נפרד</a></p>
     </div>
   </div>
 </section>
@@ -824,11 +931,11 @@ body.cms-edit .toast{bottom:10rem}
       <h2 class="sec"><span class="band o">בואו להכיר</span></h2>
       <p class="kicker">מעוניינים לשמוע עוד על בית הספר, או להצטרף לקהילת סאלד? דברו איתנו.</p>
       <ul class="contact-list">
-        <li><span class="ci">📍</span><span data-set="address" data-settext>רחוב הגדוד העברי 24, ירושלים</span></li>
-        <li><span class="ci">📞</span><a data-set="phone" data-settext href="tel:025633675" dir="ltr">02-5633675</a></li>
-        <li><span class="ci">✉️</span><a data-set="email" data-settext href="mailto:helly.szoldschooljer@gmail.com">helly.szoldschooljer@gmail.com</a></li>
-        <li><span class="ci">📘</span><a data-set="fbSchool" href="https://www.facebook.com/share/g/1Fg7hB2zrH/?mibextid=wwXIfr" target="_blank" rel="noopener">בית ספר סאלד בפייסבוק</a></li>
-        <li><span class="ci">👥</span><a data-set="fbParents" href="https://www.facebook.com/groups/242171519177997" target="_blank" rel="noopener">קבוצת הפייסבוק של הורי סאלד</a></li>
+        <li><span class="ci" aria-hidden="true">📍</span><span data-set="address" data-settext>רחוב הגדוד העברי 24, ירושלים</span></li>
+        <li><span class="ci" aria-hidden="true">📞</span><a data-set="phone" data-settext href="tel:025633675" dir="ltr">02-5633675</a></li>
+        <li><span class="ci" aria-hidden="true">✉️</span><a data-set="email" data-settext href="mailto:helly.szoldschooljer@gmail.com">helly.szoldschooljer@gmail.com</a></li>
+        <li><span class="ci" aria-hidden="true">📘</span><a data-set="fbSchool" href="https://www.facebook.com/share/g/1Fg7hB2zrH/?mibextid=wwXIfr" target="_blank" rel="noopener">בית ספר סאלד בפייסבוק</a></li>
+        <li><span class="ci" aria-hidden="true">👥</span><a data-set="fbParents" href="https://www.facebook.com/groups/242171519177997" target="_blank" rel="noopener">קבוצת הפייסבוק של הורי סאלד</a></li>
       </ul>
       <div class="hero-cta">
         <a data-set="phone" class="btn big orange" href="tel:025633675">התקשרו אלינו</a>
@@ -837,7 +944,7 @@ body.cms-edit .toast{bottom:10rem}
     </div>
     <div class="qr-card">
       <h3>חוברת תשפ״ז</h3>
-      <svg viewBox="0 0 33 33" class="qr"><path fill="#fff" d="M0 0h33v33h-33z"/><path class="qrl" stroke="#111" d="M2 2.5h7m2 0h1m2 0h5m1 0h1m3 0h7m-29 1h1m5 0h1m4 0h2m1 0h1m4 0h2m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h3m2 0h2m3 0h2m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h4m4 0h3m3 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m1 0h1m5 0h2m3 0h1m2 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-20 1h5m1 0h3m-17 1h1m2 0h1m1 0h1m1 0h3m2 0h3m1 0h1m2 0h2m1 0h2m1 0h1m-27 1h3m7 0h2m2 0h1m1 0h3m3 0h3m2 0h2m-29 1h1m1 0h5m2 0h2m1 0h1m2 0h2m1 0h1m2 0h1m2 0h3m1 0h1m-28 1h2m1 0h1m5 0h4m1 0h1m1 0h1m2 0h2m1 0h1m1 0h1m1 0h2m-29 1h3m3 0h1m1 0h5m1 0h1m2 0h1m2 0h1m2 0h1m1 0h1m2 0h1m-29 1h1m2 0h1m1 0h1m2 0h1m1 0h2m2 0h5m3 0h1m1 0h1m1 0h1m1 0h1m-28 1h4m1 0h1m2 0h1m3 0h1m1 0h1m1 0h2m2 0h1m2 0h1m3 0h1m-29 1h1m2 0h1m3 0h1m2 0h4m3 0h3m1 0h3m1 0h1m1 0h1m-28 1h1m3 0h3m1 0h1m2 0h2m2 0h2m1 0h4m6 0h1m-29 1h1m1 0h1m1 0h1m4 0h3m1 0h1m3 0h2m3 0h3m3 0h1m-27 1h3m1 0h2m2 0h2m2 0h2m1 0h2m1 0h1m3 0h1m3 0h1m-27 1h4m1 0h5m1 0h5m1 0h2m2 0h1m1 0h1m2 0h1m-29 1h2m1 0h1m2 0h2m1 0h2m1 0h1m3 0h2m2 0h6m1 0h2m-21 1h1m1 0h1m1 0h1m1 0h1m1 0h1m2 0h2m3 0h1m1 0h3m-29 1h7m4 0h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h1m-29 1h1m5 0h1m6 0h1m3 0h1m1 0h2m3 0h2m-26 1h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h2m2 0h7m-25 1h1m1 0h3m1 0h1m2 0h2m5 0h3m4 0h1m2 0h2m-28 1h1m1 0h3m1 0h1m5 0h1m3 0h2m1 0h3m5 0h2m-29 1h1m5 0h1m1 0h3m1 0h1m4 0h2m1 0h1m2 0h1m1 0h1m1 0h2m-29 1h7m3 0h1m1 0h2m1 0h1m1 0h2m1 0h3m1 0h1m2 0h1"/></svg>
+      <svg role="img" aria-label="קוד QR לפתיחת חוברת תשפ״ז" viewBox="0 0 33 33" class="qr"><path fill="#fff" d="M0 0h33v33h-33z"/><path class="qrl" stroke="#111" d="M2 2.5h7m2 0h1m2 0h5m1 0h1m3 0h7m-29 1h1m5 0h1m4 0h2m1 0h1m4 0h2m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h3m2 0h2m3 0h2m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h4m4 0h3m3 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m1 0h1m5 0h2m3 0h1m2 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-20 1h5m1 0h3m-17 1h1m2 0h1m1 0h1m1 0h3m2 0h3m1 0h1m2 0h2m1 0h2m1 0h1m-27 1h3m7 0h2m2 0h1m1 0h3m3 0h3m2 0h2m-29 1h1m1 0h5m2 0h2m1 0h1m2 0h2m1 0h1m2 0h1m2 0h3m1 0h1m-28 1h2m1 0h1m5 0h4m1 0h1m1 0h1m2 0h2m1 0h1m1 0h1m1 0h2m-29 1h3m3 0h1m1 0h5m1 0h1m2 0h1m2 0h1m2 0h1m1 0h1m2 0h1m-29 1h1m2 0h1m1 0h1m2 0h1m1 0h2m2 0h5m3 0h1m1 0h1m1 0h1m1 0h1m-28 1h4m1 0h1m2 0h1m3 0h1m1 0h1m1 0h2m2 0h1m2 0h1m3 0h1m-29 1h1m2 0h1m3 0h1m2 0h4m3 0h3m1 0h3m1 0h1m1 0h1m-28 1h1m3 0h3m1 0h1m2 0h2m2 0h2m1 0h4m6 0h1m-29 1h1m1 0h1m1 0h1m4 0h3m1 0h1m3 0h2m3 0h3m3 0h1m-27 1h3m1 0h2m2 0h2m2 0h2m1 0h2m1 0h1m3 0h1m3 0h1m-27 1h4m1 0h5m1 0h5m1 0h2m2 0h1m1 0h1m2 0h1m-29 1h2m1 0h1m2 0h2m1 0h2m1 0h1m3 0h2m2 0h6m1 0h2m-21 1h1m1 0h1m1 0h1m1 0h1m1 0h1m2 0h2m3 0h1m1 0h3m-29 1h7m4 0h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h1m-29 1h1m5 0h1m6 0h1m3 0h1m1 0h2m3 0h2m-26 1h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h2m2 0h7m-25 1h1m1 0h3m1 0h1m2 0h2m5 0h3m4 0h1m2 0h2m-28 1h1m1 0h3m1 0h1m5 0h1m3 0h2m1 0h3m5 0h2m-29 1h1m5 0h1m1 0h3m1 0h1m4 0h2m1 0h1m2 0h1m1 0h1m1 0h2m-29 1h7m3 0h1m1 0h2m1 0h1m1 0h2m1 0h3m1 0h1m2 0h1"/></svg>
       <p>סרקו כאן כדי לקרוא את חוברת פתיחת השנה</p>
       <a data-set="booklet" class="btn" href="https://bit.ly/Szoldschooljlm" target="_blank" rel="noopener">לפתיחת החוברת</a>
     </div>
@@ -847,8 +954,8 @@ body.cms-edit .toast{bottom:10rem}
       <h3>השאירו פרטים ונחזור אליכם</h3>
       <p class="fnote">אנחנו משתמשים בפרטים רק כדי לחזור אליכם בנוגע לפנייה.</p>
       <div class="f-grid">
-        <label>שם מלא<input type="text" name="name" id="cfName" autocomplete="name" required></label>
-        <label>טלפון<input type="tel" name="phone" id="cfPhone" autocomplete="tel" dir="ltr" style="text-align:right" required></label>
+        <label>שם מלא (חובה)<input type="text" name="name" id="cfName" autocomplete="name" required aria-required="true"></label>
+        <label>טלפון (חובה)<input type="tel" name="phone" id="cfPhone" autocomplete="tel" inputmode="tel" dir="ltr" style="text-align:right" required aria-required="true"></label>
         <label>אימייל (לא חובה)<input type="email" name="email" id="cfEmail" autocomplete="email" dir="ltr" style="text-align:right"></label>
         <label>הפנייה היא בנושא
           <select name="topic" id="cfTopic">
@@ -859,7 +966,7 @@ body.cms-edit .toast{bottom:10rem}
           </select></label>
         <label class="wide">הודעה (לא חובה)<textarea name="message" id="cfMsg" rows="3"></textarea></label>
       </div>
-      <input type="text" id="cfHoney" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
+      <input type="text" id="cfHoney" tabindex="-1" autocomplete="off" aria-hidden="true" aria-label="אל תמלאו שדה זה" style="position:absolute;left:-9999px;opacity:0">
       <div class="f-msg" id="cfStatus" role="status" aria-live="polite"></div>
       <button class="btn big orange" type="submit" id="cfBtn">שליחה</button>
     </form>
@@ -867,6 +974,34 @@ body.cms-edit .toast{bottom:10rem}
 </section>
 
 
+
+<section class="a11y-sec" id="accessibility">
+  <div class="wrap">
+    <h2 class="sec"><span class="band o">הצהרת נגישות</span></h2>
+    <div class="a11y-text">
+      <p>בית הספר הממלכתי ע״ש הנרייטה סאלד רואה חשיבות רבה במתן שירות שוויוני לכלל הציבור, ובכלל זה לאנשים עם מוגבלות. אנו משקיעים מאמצים להנגשת האתר ולשיפורה המתמיד, כדי שכולם יוכלו לקבל מידע ולהשתמש בשירותים באופן עצמאי ונוח.</p>
+      <h3>התאמות שבוצעו באתר</h3>
+      <ul>
+        <li>התאמה להנחיות הנגישות הבינלאומיות WCAG ברמה AA ולתקן הישראלי ת״י 5568, ככל האפשר.</li>
+        <li>ניווט מלא באמצעות מקלדת, חיווי ברור של מיקום המקלדת וקישור ״דלגו לתוכן הראשי״.</li>
+        <li>מבנה כותרות ואזורי עמוד (landmarks) התומכים בקוראי מסך, וטקסט חלופי לתמונות.</li>
+        <li>ניגודיות צבעים גבוהה בטקסטים ובכפתורים, ואפשרות להגדלת הטקסט עד 160% ללא פגיעה בתוכן.</li>
+        <li>תפריט נגישות (הכפתור בפינת המסך): הגדלה והקטנה של טקסט, ניגודיות גבוהה, גווני אפור, הדגשת קישורים וכותרות, גופן קריא, ריווח טקסט, סמן גדול ועצירת אנימציות.</li>
+        <li>התאמה לצפייה בטלפון נייד ובמסכים בגדלים שונים.</li>
+      </ul>
+      <h3>מגבלות ידועות</h3>
+      <p>חלק מהרכיבים מסופקים על ידי גורמים חיצוניים ואינם בשליטתנו, וייתכן שאינם נגישים במלואם: יומן Google המוטמע, קבוצות הפייסבוק וחוברת פתיחת השנה. לכל אחד מהם מוצע קישור נפרד, ואפשר לפנות אלינו לקבלת המידע בדרך אחרת. תמונות שמועלות לאתר על ידי הצוות עשויות להיות ללא תיאור מלא.</p>
+      <h3>פניות בנושא נגישות</h3>
+      <p>נתקלתם בקושי, או שיש לכם הצעה לשיפור? נשמח לשמוע ולטפל בהקדם. רכזת הנגישות: מזכירות בית הספר.</p>
+      <ul class="a11y-contact">
+        <li>טלפון: <a data-set="phone" data-settext href="tel:025633675" dir="ltr">02-5633675</a></li>
+        <li>אימייל: <a data-set="email" data-settext href="mailto:helly.szoldschooljer@gmail.com">helly.szoldschooljer@gmail.com</a></li>
+        <li>כתובת: <span data-set="address" data-settext>רחוב הגדוד העברי 24, ירושלים</span></li>
+      </ul>
+      <p class="a11y-date">הצהרה זו עודכנה לאחרונה ב-19.10.2026.</p>
+    </div>
+  </div>
+</section>
 
 </main>
 
@@ -876,14 +1011,15 @@ body.cms-edit .toast{bottom:10rem}
   <p>משפחתי בסאלד · שנת הלימודים התשפ״ז</p>
   <p style="margin-top:.3rem;opacity:.7">זה המקום שלנו: נבנה אותו יחד 💚</p>
   <p style="margin-top:.6rem"><a data-set="fbSchool" href="https://www.facebook.com/share/g/1Fg7hB2zrH/?mibextid=wwXIfr" target="_blank" rel="noopener" style="color:var(--mint);font-weight:700">בית ספר סאלד בפייסבוק</a></p>
+  <p class="foot-links"><a href="#accessibility">הצהרת נגישות</a></p>
   <button class="adm" onclick="openAdmin(event)">מערכת ניהול</button>
 </footer>
 
-<button id="chatFab" onclick="toggleChat()" title="שאלו את הבוט של סאלד" aria-label="פתיחת הצ׳אט">💬</button>
-<div id="chatBox">
-  <div class="chat-head"><b>🌿 בוט סאלד</b><button onclick="toggleChat()" aria-label="סגירה">✕</button></div>
-  <div class="chat-msgs" id="chatMsgs"><div class="msg bot">שלום! 👋 אני הבוט של בית ספר סאלד. אפשר לשאול אותי על בית הספר: חזון, ועדות, גוונים, חונכויות, צוות, נהלים ועוד.</div></div>
-  <div class="chat-input"><input type="text" id="chatInput" placeholder="שאלו אותי משהו..." onkeydown="if(event.key==='Enter')sendChat()"><button onclick="sendChat()" aria-label="שליחה">⬅</button></div>
+<button id="chatFab" onclick="toggleChat()" title="שאלו את הבוט של סאלד" aria-label="פתיחת צ׳אט עם הבוט של סאלד" aria-expanded="false" aria-controls="chatBox"><span aria-hidden="true">💬</span></button>
+<div id="chatBox" role="dialog" aria-label="צ׳אט עם הבוט של סאלד">
+  <div class="chat-head"><b><span aria-hidden="true">🌿</span> בוט סאלד</b><button onclick="toggleChat()" aria-label="סגירת הצ׳אט"><span aria-hidden="true">✕</span></button></div>
+  <div class="chat-msgs" id="chatMsgs" role="log" aria-live="polite" aria-label="שיחה עם הבוט"><div class="msg bot">שלום! 👋 אני הבוט של בית ספר סאלד. אפשר לשאול אותי על בית הספר: חזון, ועדות, גוונים, חונכויות, צוות, נהלים ועוד.</div></div>
+  <div class="chat-input"><input type="text" id="chatInput" aria-label="כתבו שאלה לבוט" placeholder="שאלו אותי משהו..." onkeydown="if(event.key==='Enter')sendChat()"><button onclick="sendChat()" aria-label="שליחת השאלה"><span aria-hidden="true">⬅</span></button></div>
 </div>
 <div class="toast" id="toast"></div>
 <div id="cmsRoot"></div>
@@ -904,7 +1040,8 @@ function initCalendarMode(){
     document.getElementById('gcalWrap').style.display='block';
     document.getElementById('gcalFrame').src=
       'https://calendar.google.com/calendar/embed?src='+encodeURIComponent(GCAL_ID)+
-      '&ctz=Asia%2FJerusalem&hl=iw&mode=MONTH&showTitle=0&showPrint=0&showTz=0&bgcolor=%23ffffff';
+      '&ctz=Asia%2FJerusalem&hl=iw&mode='+(window.innerWidth<700?'AGENDA':'MONTH')+'&showTitle=0&showPrint=0&showTz=0&bgcolor=%23ffffff';
+    var go=document.getElementById('gcalOpen');if(go)go.href='https://calendar.google.com/calendar/embed?src='+encodeURIComponent(GCAL_ID)+'&ctz=Asia%2FJerusalem&hl=iw';
     loadUpcoming().then(syncHero);
   }else{
     var nu=document.getElementById('nextup');if(nu)nu.style.display='none';
@@ -961,7 +1098,7 @@ async function loadUpcoming(){
              .sort((a,b)=>a.start-b.start).slice(0,8);
   const list=document.getElementById('upcomingList');
   if(!items.length){
-    list.innerHTML='<span class="upcoming-empty">אין אירועים קרובים בשבועיים הקרובים 🌿</span>';
+    list.innerHTML='<span class="upcoming-empty">אין אירועים קרובים בשבועיים הקרובים</span>';
     return;
   }
   list.innerHTML=items.map(ev=>{
@@ -970,7 +1107,7 @@ async function loadUpcoming(){
     return '<div class="upcoming-item">'+
       '<span class="date-badge">'+d.getDate()+'.'+(d.getMonth()+1)+'<small>יום '+HEB_DAYS[d.getDay()]+'</small></span>'+
       '<span><span class="ev-title">'+esc(ev.title)+'</span>'+
-      (timeStr?'<br><span class="ev-time">🕐 '+timeStr+'</span>':'')+
+      (timeStr?'<br><span class="ev-time"><span aria-hidden="true">🕐</span> '+timeStr+'</span>':'')+
       '</span></div>';
   }).join('');
 }
@@ -1031,7 +1168,7 @@ function parseIcsDate(raw){
 }
 
 /* ================= NAV ================= */
-function closeNav(){document.getElementById('navLinks').classList.remove('open')}
+function closeNav(){var n=document.getElementById('navLinks');n.classList.remove('open');var t=document.getElementById('navToggle');if(t){t.setAttribute('aria-expanded','false');t.setAttribute('aria-label','פתיחת תפריט')}}
 
 /* ================= TOAST ================= */
 function toast(msg){
@@ -1128,7 +1265,7 @@ function toggleChat(){
   const fab=document.getElementById('chatFab');
   box.classList.toggle('open');
   fab.style.display=box.classList.contains('open')?'none':'block';
-  if(box.classList.contains('open'))document.getElementById('chatInput').focus();
+  fab.setAttribute('aria-expanded',box.classList.contains('open')?'true':'false');if(box.classList.contains('open'))document.getElementById('chatInput').focus();else fab.focus();
 }
 function addMsg(text,cls){
   const m=document.createElement('div');
@@ -1834,6 +1971,81 @@ async function doRestore(id){
   loadContent();
   resumeSession();
 })();
+
+/* ====================================================================
+   נגישות: תפריט נגישות, מקלדת, ARIA
+   ==================================================================== */
+function toggleNav(){
+  const n=document.getElementById('navLinks'),t=document.getElementById('navToggle');
+  const o=n.classList.toggle('open');
+  t.setAttribute('aria-expanded',o?'true':'false');
+  t.setAttribute('aria-label',o?'סגירת תפריט':'פתיחת תפריט');
+}
+function markExternal(){
+  document.querySelectorAll('a[target="_blank"]').forEach(a=>{
+    const t=a.textContent.trim();
+    if(!t)return;
+    a.setAttribute('aria-label',t+' (נפתח בכרטיסייה חדשה)');
+  });
+}
+const A11Y_KEY='szold-a11y';
+const A11Y={size:100,contrast:false,gray:false,links:false,font:false,cursor:false,noanim:false,heads:false,spacing:false};
+const A11Y_TOGGLES=[
+  ['contrast','ניגודיות גבוהה'],['gray','גווני אפור'],['links','הדגשת קישורים'],['heads','הדגשת כותרות'],
+  ['font','גופן קריא'],['spacing','ריווח טקסט'],['cursor','סמן גדול'],['noanim','עצירת אנימציות']
+];
+function a11yApply(){
+  const h=document.documentElement;
+  h.style.fontSize=A11Y.size===100?'':A11Y.size+'%';
+  A11Y_TOGGLES.forEach(([k])=>h.classList.toggle('a11y-'+k,!!A11Y[k]));
+  document.querySelectorAll('#a11yPanel [data-a11y]').forEach(b=>b.setAttribute('aria-pressed',A11Y[b.dataset.a11y]?'true':'false'));
+  const s=document.getElementById('a11ySize');if(s)s.textContent=A11Y.size+'%';
+  try{localStorage.setItem(A11Y_KEY,JSON.stringify(A11Y))}catch(e){}
+}
+function a11ySet(k){A11Y[k]=!A11Y[k];a11yApply()}
+function a11ySize(d){A11Y.size=Math.max(80,Math.min(160,A11Y.size+d));a11yApply()}
+function a11yReset(){A11Y.size=100;A11Y_TOGGLES.forEach(([k])=>A11Y[k]=false);a11yApply()}
+function a11yPanel(open){
+  const p=document.getElementById('a11yPanel'),b=document.getElementById('a11yBtn');
+  const o=open===undefined?p.hidden:open;
+  p.hidden=!o;b.setAttribute('aria-expanded',o?'true':'false');
+  if(o)p.querySelector('button').focus();else if(open===false)b.focus();
+}
+function a11yInit(){
+  try{Object.assign(A11Y,JSON.parse(localStorage.getItem(A11Y_KEY)||'{}'))}catch(e){}
+  const wrap=document.createElement('div');
+  wrap.id='a11yRoot';
+  wrap.innerHTML=
+   '<button id="a11yBtn" type="button" aria-label="תפריט נגישות" aria-expanded="false" aria-controls="a11yPanel" onclick="a11yPanel()">'+
+   '<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false"><circle cx="12" cy="4.2" r="2.2" fill="currentColor"/><path d="M4 8.2l8 1.3 8-1.3M12 9.5v5.3m0 0l-3.2 6m3.2-6l3.2 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>'+
+   '<div id="a11yPanel" role="dialog" aria-label="תפריט נגישות" hidden>'+
+   '<div class="a11y-head"><b>הגדרות נגישות</b><button type="button" class="a11y-x" aria-label="סגירת תפריט הנגישות" onclick="a11yPanel(false)"><span aria-hidden="true">✕</span></button></div>'+
+   '<div class="a11y-size"><span>גודל טקסט</span><button type="button" aria-label="הקטנת טקסט" onclick="a11ySize(-10)"><span aria-hidden="true">א−</span></button><output id="a11ySize" aria-live="polite">100%</output><button type="button" aria-label="הגדלת טקסט" onclick="a11ySize(10)"><span aria-hidden="true">א+</span></button></div>'+
+   '<div class="a11y-grid">'+A11Y_TOGGLES.map(([k,l])=>'<button type="button" data-a11y="'+k+'" aria-pressed="false" onclick="a11ySet(\''+k+'\')">'+l+'</button>').join('')+'</div>'+
+   '<div class="a11y-foot"><button type="button" onclick="a11yReset()">איפוס הגדרות</button><a href="#accessibility" onclick="a11yPanel(false)">הצהרת נגישות</a></div></div>';
+  document.body.appendChild(wrap);
+  a11yApply();
+  markExternal();
+}
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Escape')return;
+  const p=document.getElementById('a11yPanel');
+  if(p&&!p.hidden){a11yPanel(false);return}
+  const m=document.querySelector('.modal-bg.show');
+  if(m){m.classList.remove('show');return}
+  const chat=document.getElementById('chatBox');
+  if(chat&&chat.classList.contains('open')){toggleChat();return}
+  const nav=document.getElementById('navLinks');
+  if(nav&&nav.classList.contains('open')){toggleNav();document.getElementById('navToggle').focus()}
+});
+/* סגירת התפריט בלחיצה מחוץ לו */
+document.addEventListener('click',e=>{
+  const p=document.getElementById('a11yPanel');
+  if(p&&!p.hidden&&!e.target.closest('#a11yPanel,#a11yBtn'))a11yPanel(false);
+});
+/* מעבר ל-main בלחיצה על "דלגו לתוכן" מעביר גם את המקלדת */
+document.querySelector('.skip-link').addEventListener('click',()=>{setTimeout(()=>document.getElementById('main').focus(),0)});
+a11yInit();
 
 </script>
 </body>
