@@ -604,4 +604,9 @@ html.a11y-contrast #a11yPanel [aria-pressed="true"]{background-color:#ffeb3b!imp
 .cta-band h2{font-size:1.7rem}
 .cta-band .btn{background:#fff;color:var(--green-dark)}
 .cta-band a{color:#fff;font-weight:700}
+.charter ul{padding-inline-start:1.3rem;margin:.6rem 0 0}
+.charter li{margin-bottom:.9rem;line-height:1.8}
+.charter .note{display:block;font-size:.95rem;color:#444;margin-top:.3rem}
+.charter .box{background:#fff;border-radius:24px;padding:1.6rem 1.8rem;box-shadow:var(--shadow);max-width:820px;margin-bottom:1.4rem}
+.charter .box h2{font-size:1.5rem;color:var(--green-dark);margin-bottom:.5rem}
 @media(max-width:620px){.facts th{white-space:normal;width:7rem}.sub-cta .btn{width:100%;text-align:center}.cta-band{padding:1.5rem}}
