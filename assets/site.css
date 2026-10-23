@@ -625,7 +625,7 @@ a.chip:hover{filter:brightness(.95);text-decoration:underline}
 .tour-status{font-weight:700;color:var(--green-dark);margin-top:.8rem}
 .tour-help{max-width:780px;margin-top:1rem;line-height:1.8}
 .tour-desc{max-width:780px;padding-inline-start:1.2rem;line-height:1.8;margin-top:.6rem}
-.pnlm-container .pnlm-hotspot.pnlm-scene.tour-arrow{height:60px;position:absolute;width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.92) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 4l7 8h-4.5v8h-5v-8H5z' fill='%230b7a66'/%3E%3C/svg%3E") center/70% no-repeat;border:4px solid #0b7a66;box-shadow:0 4px 14px rgba(0,0,0,.4);cursor:pointer}
-.pnlm-container .pnlm-hotspot.tour-arrow:hover,.pnlm-container .pnlm-hotspot.tour-arrow:focus{border-color:#9a3ca4;outline:3px solid #fff}
-.pnlm-hotspot.tour-arrow span{visibility:hidden;position:absolute;top:68px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.75);color:#fff;padding:3px 10px;border-radius:8px;white-space:nowrap;font-family:'Heebo';font-weight:700;direction:rtl}
-.pnlm-hotspot.tour-arrow:hover span,.pnlm-hotspot.tour-arrow:focus span{visibility:visible}
+.pnlm-container .pnlm-hotspot-base.tour-arrow{height:60px;position:absolute;width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.92) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 4l7 8h-4.5v8h-5v-8H5z' fill='%230b7a66'/%3E%3C/svg%3E") center/70% no-repeat;border:4px solid #0b7a66;box-shadow:0 4px 14px rgba(0,0,0,.4);cursor:pointer}
+.pnlm-container .pnlm-hotspot-base.tour-arrow:hover,.pnlm-container .pnlm-hotspot-base.tour-arrow:focus{border-color:#9a3ca4;outline:3px solid #fff}
+.pnlm-hotspot-base.tour-arrow span{visibility:hidden;position:absolute;top:68px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.75);color:#fff;padding:3px 10px;border-radius:8px;white-space:nowrap;font-family:'Heebo';font-weight:700;direction:rtl}
+.pnlm-hotspot-base.tour-arrow:hover span,.pnlm-hotspot-base.tour-arrow:focus span{visibility:visible}
