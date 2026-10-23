@@ -633,11 +633,16 @@ a.chip:hover{filter:brightness(.95);text-decoration:underline}
 .tours{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;margin-top:1.4rem}
 .tour-card{display:flex;flex-direction:column;background:#fff;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);text-decoration:none;color:var(--ink);border:3px solid transparent}
 a.tour-card:hover,a.tour-card:focus-visible{border-color:var(--magenta)}
-.tour-card img,.tour-card .ph{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:linear-gradient(135deg,#0b7a66,#9a3ca4)}
+.tour-card img,.tour-card .ph{width:100%;aspect-ratio:2/1;object-fit:cover;display:block;background:linear-gradient(135deg,#0b7a66,#9a3ca4)}
 .tour-card .ph{display:flex;align-items:center;justify-content:center;color:#fff;font:900 2.4rem 'Rubik',sans-serif}
 .tour-card .tc{padding:1rem 1.2rem 1.3rem}
 .tour-card h2{font-size:1.35rem;margin:0 0 .4rem;color:var(--green-dark)}
 .tour-card p{margin:0 0 .8rem;line-height:1.7}
 .tour-card .go{font-weight:700;color:var(--magenta)}
 .tour-card.soon{opacity:.85}
+.pick{font-size:1.5rem;margin:1.4rem 0 0;color:var(--green-dark)}
+.tour-card .go{display:inline-block;background:var(--green);color:#fff;padding:.55rem 1.3rem;border-radius:999px;font-size:1.05rem}
+.tour-card.soon .go{background:#9a9a9a}
+.tour-card h2{font-size:1.6rem}
+.sub-hero:has(.tours){padding-bottom:2.5rem}
 .tour-card.soon .go{color:#555}
