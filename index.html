@@ -2104,5 +2104,55 @@ document.querySelector('.skip-link').addEventListener('click',()=>{setTimeout(()
 a11yInit();
 
 </script>
+<style>
+#welcomePop{position:fixed;inset:0;z-index:2147483000;display:none;align-items:center;justify-content:center;padding:1rem;background:rgba(20,20,20,.6)}
+#welcomePop.open{display:flex}
+#welcomePop .wp-card{position:relative;background:#fff;color:#1c1c1c;border-radius:28px;max-width:480px;width:100%;max-height:92vh;overflow:auto;box-shadow:0 24px 60px rgba(0,0,0,.45);animation:wpIn .35s ease-out;font-family:'Heebo',sans-serif;direction:rtl;text-align:right}
+@keyframes wpIn{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){#welcomePop .wp-card{animation:none}}
+#welcomePop .wp-top{background:#0b7a66;color:#fff;padding:1.6rem 1.5rem 1.3rem;border-radius:28px 28px 0 0}
+#welcomePop .wp-top h2{font-family:'Rubik','Heebo',sans-serif;font-weight:900;font-size:1.55rem;line-height:1.25;margin:0}
+#welcomePop .wp-top p{margin:.5rem 0 0;font-weight:700;color:#ffe8a3}
+#welcomePop .wp-body{padding:1.3rem 1.5rem 1.6rem}
+#welcomePop .wp-body>p{margin:0 0 1rem;font-size:1.1rem;line-height:1.6}
+#welcomePop .wp-btn{display:flex;align-items:center;gap:.7rem;padding:.9rem 1.1rem;margin-bottom:.8rem;border-radius:18px;background:#e9f6f2;border:2px solid #0b7a66;color:#0b5a4b;font-weight:900;font-size:1.15rem;text-decoration:none}
+#welcomePop .wp-btn:hover,#welcomePop .wp-btn:focus-visible{background:#0b7a66;color:#fff}
+#welcomePop .wp-btn.b2{background:#f6e9f8;border-color:#9a3ca4;color:#7b2a85}
+#welcomePop .wp-btn.b2:hover,#welcomePop .wp-btn.b2:focus-visible{background:#9a3ca4;color:#fff}
+#welcomePop .wp-btn span{font-size:1.6rem}
+#welcomePop .wp-x{position:absolute;top:.7rem;left:.7rem;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.95);color:#1c1c1c;font-size:1.6rem;line-height:1;cursor:pointer;font-weight:700}
+#welcomePop .wp-later{display:block;margin:.4rem auto 0;background:none;border:0;color:#555;text-decoration:underline;font-family:inherit;font-size:1rem;cursor:pointer;padding:.5rem}
+html.a11y-contrast #welcomePop .wp-card,html.a11y-contrast #welcomePop .wp-card *{background-color:#fff!important;color:#000!important}
+html.a11y-contrast #welcomePop .wp-btn{border-color:#000!important}
+</style>
+<div id="welcomePop" role="dialog" aria-modal="true" aria-labelledby="wpTitle" aria-describedby="wpDesc" hidden>
+  <div class="wp-card">
+    <button type="button" class="wp-x" aria-label="סגירת החלון" onclick="closeWelcome()">×</button>
+    <div class="wp-top"><h2 id="wpTitle">ימים פתוחים בסאלד לקראת ההרשמה לשנת הלימודים תשפ״ז</h2><p>בקרוב</p></div>
+    <div class="wp-body" id="wpDesc">
+      <p>בינתיים מוזמנים/ות להצטרף לקבוצות המתעניינים שלנו:</p>
+      <a class="wp-btn" href="https://chat.whatsapp.com/KjdkdVfp9Y60LPD3fFSLbt?s=cl&amp;p=i&amp;mlu=4&amp;ilr=4&amp;iam=2" target="_blank" rel="noopener"><span aria-hidden="true">🌱</span>קבוצת הגנים</a>
+      <a class="wp-btn b2" href="https://chat.whatsapp.com/CBwVksA6rch6ksA1hp2AhZ?s=cl&amp;p=i&amp;mlu=4&amp;ilr=4&amp;iam=2" target="_blank" rel="noopener"><span aria-hidden="true">🎒</span>קבוצת בית הספר</a>
+      <button type="button" class="wp-later" onclick="closeWelcome()">סגירה</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var pop=document.getElementById('welcomePop'),last=null;
+  function seen(){try{return sessionStorage.getItem('szWelcome')==='1'}catch(e){return false}}
+  function mark(){try{sessionStorage.setItem('szWelcome','1')}catch(e){}}
+  window.closeWelcome=function(){pop.classList.remove('open');pop.hidden=true;mark();document.removeEventListener('keydown',onKey);if(last&&last.focus)try{last.focus()}catch(e){}};
+  function onKey(e){
+    if(e.key==='Escape'){closeWelcome();return}
+    if(e.key==='Tab'){var f=pop.querySelectorAll('a[href],button');if(!f.length)return;var a=f[0],z=f[f.length-1];
+      if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}}
+  }
+  function open(){if(seen())return;last=document.activeElement;pop.hidden=false;pop.classList.add('open');document.addEventListener('keydown',onKey);var x=pop.querySelector('.wp-x');if(x)x.focus()}
+  pop.addEventListener('click',function(e){if(e.target===pop)closeWelcome()});
+  pop.querySelectorAll('.wp-btn').forEach(function(a){a.addEventListener('click',mark)});
+  setTimeout(open,900);
+})();
+</script>
 </body>
 </html>
