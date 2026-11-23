@@ -470,6 +470,14 @@ html.a11y-contrast .wa-card .btn{background-color:#000!important;color:#ffeb3b!i
 .portrait-blob{background:transparent!important;border-radius:0}
 .portrait-blob img{filter:none!important;height:100%!important;bottom:0}
 .heritage .pic::before{display:none}
+/* סרטון הלופ בעיגול (בדף הבית) */
+.portrait-blob.vid-circle{background:transparent!important;border-radius:50%!important;aspect-ratio:1;width:64%;inset-inline-end:0;bottom:2%}
+.vid-circle::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--mint);transform:translate(-5%,5%) scale(.98);z-index:0}
+.vid-circle .vid-in{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:#fff;border:7px solid var(--magenta);box-shadow:0 14px 30px rgba(0,0,0,.18);z-index:1}
+.vid-circle video{display:block;width:100%;height:100%;object-fit:cover}
+.hero .s-bubble{z-index:3}
+html[dir=rtl] .vid-circle::before{transform:translate(5%,5%) scale(.98)}
+
 .heritage .pic img{filter:none}
 .heritage .pic img{height:auto}
 /* ===== CMS ===== */
@@ -672,7 +680,7 @@ a.chip:hover{filter:brightness(.95);text-decoration:underline}
       <span class="stk s-star"></span>
       <div class="logo-card"><img data-imgslot="logo" src="/assets/family-logo.svg" alt="משפחתי בסאלד" width="426" height="218"></div>
       <span class="stk s-quote"></span>
-      <div class="portrait-blob"><img data-imgslot="portrait" src="/assets/portrait.webp" alt="הנרייטה סאלד" width="720" height="883"></div>
+      <div class="portrait-blob vid-circle"><div class="vid-in"><video id="heroLoop" muted loop autoplay playsinline preload="auto" poster="/assets/hero-loop-poster.webp" width="720" height="720" role="img" aria-label="הנרייטה סאלד הופכת ללוגו העלה של בית הספר"><source src="/assets/hero-loop.mp4" type="video/mp4"></video></div></div>
       <span class="stk s-bubble"></span>
       <div class="portrait-cap">הנרייטה סאלד, 1860–1945</div>
     </div>
@@ -2152,6 +2160,16 @@ html.a11y-contrast #welcomePop .wp-btn{border-color:#000!important}
   pop.addEventListener('click',function(e){if(e.target===pop)closeWelcome()});
   pop.querySelectorAll('.wp-btn').forEach(function(a){a.addEventListener('click',mark)});
   setTimeout(open,900);
+})();
+</script>
+<script>
+(function(){var v=document.getElementById('heroLoop');if(!v)return;
+var mq=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)');
+function sync(){var off=(mq&&mq.matches)||document.documentElement.classList.contains('a11y-noanim');
+ if(off){v.pause();try{v.currentTime=0}catch(e){}}else{var p=v.play();if(p&&p.catch)p.catch(function(){})}}
+sync();new MutationObserver(sync).observe(document.documentElement,{attributes:true,attributeFilter:['class']});
+if(mq&&mq.addEventListener)mq.addEventListener('change',sync);
+document.addEventListener('visibilitychange',function(){if(!document.hidden)sync()});
 })();
 </script>
 </body>
